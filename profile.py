@@ -35,7 +35,7 @@ link = request.LAN("lan")
 
 #for i in range(0, 4):
 
-for i in range(0, 15):
+for i in range(0,4):
 		
 	if i == 0:
 		node = request.XenVM("head")
@@ -46,8 +46,8 @@ for i in range(0, 15):
 		node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/mountHead.sh"))
 		node.addService(pg.Execute(shell="sh", command="sudo /local/repository/mountHead.sh"))
 		# addServices to install MPI in the /software directory on head node
-		node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_mpi.sh"))
-		node.addService(pg.Execute(shell="sh", command="sudo /local/repository/install_mpi.sh"))
+		#node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/install_mpi.sh"))
+		#node.addService(pg.Execute(shell="sh", command="sudo /local/repository/install_mpi.sh"))
 		# sleep statement so MPI has ample time to properly install
 		#node.addService(pg.Execute(shell="sh", command="sleep 15m"))
 	elif i == 1:
@@ -82,8 +82,8 @@ for i in range(0, 15):
 		#node.addService(pg.Execute(shell="sh", command="sudo chmod 755 /local/repository/mountStorage.sh"))
 		#node.addService(pg.Execute(shell="sh", command="sudo /local/repository/mountStorage.sh"))		
 		# copy files to scratch
-		node.addService(pg.Execute(shell="sh", command="sudo cp /local/repository/source/* /scratch"))
-		node.addService(pg.Execute(shell="sh", command="sudo cp /local/repository/source/* /users/BC843101/scratch"))
+		#node.addService(pg.Execute(shell="sh", command="sudo cp /local/repository/source/* /scratch"))
+		#node.addService(pg.Execute(shell="sh", command="sudo cp /local/repository/source/* /users/BC843101/scratch"))
 		
 	node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:CENTOS7-64-STD"
 
